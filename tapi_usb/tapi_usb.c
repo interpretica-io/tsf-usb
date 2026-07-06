@@ -87,7 +87,7 @@ usb_parse_iface_classes(const char *csv, tapi_usb_device *device)
         uint8_t cls = (uint8_t)value;
         const char *comma = strchr(p, ',');
 
-        device->iface_classes = TE_REALLOC(device->iface_classes,
+        TE_REALLOC(device->iface_classes,
                                    (device->n_iface_classes + 1) *
                                    sizeof(*device->iface_classes));
         device->iface_classes[device->n_iface_classes++] = cls;
